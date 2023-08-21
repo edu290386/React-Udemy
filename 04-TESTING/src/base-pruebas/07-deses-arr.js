@@ -1,11 +1,11 @@
 
 
-const personajes = ['Goku','Vegeta','Trunks'];
-const [ , , p3 ] = personajes;
-console.log( p3 );
+// const personajes = ['Goku','Vegeta','Trunks'];
+// const [ , , p3 ] = personajes;
+// console.log( p3 );
 
 
-const retornaArreglo = () =>{
+export const retornaArreglo = () =>{
     return ['ABC', 123];
 }
 
