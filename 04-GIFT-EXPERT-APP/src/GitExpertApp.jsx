@@ -11,10 +11,11 @@ export const GitExpertApp = () => {
     setCategories([...categories, "Thundercats"]);
   };
 
+  console.log(categories);
   return (
     <>
       <h1>GitExpertApp</h1>
-      <AddCategory />
+      <AddCategory setCategories={setCategories}/>
       <button onClick={onAddCategory}>Agregar</button>
       <ol>
         {categories.map((category, index) => {
