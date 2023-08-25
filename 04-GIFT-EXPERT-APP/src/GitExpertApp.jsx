@@ -1,27 +1,27 @@
 import { useState } from "react";
 import { AddCategory } from "./components/AddCategory";
+import { GifGrid } from "./components/GifGrid";
 
 export const GitExpertApp = () => {
   const [categories, setCategories] = useState([
-    "Dragon Ball",
     "Caballeros del Zodiaco",
   ]);
 
-  const onAddCategory = () => {
-    setCategories([...categories, "Thundercats"]);
+  const onAddCategory = (newCategory) => {
+    const duplicatedCategory = categories.some(
+      (category) => category.toLowerCase() == newCategory.toLowerCase()
+    );
+    if (duplicatedCategory) return;
+    setCategories([newCategory, ...categories]);
   };
 
-  console.log(categories);
   return (
     <>
       <h1>GitExpertApp</h1>
-      <AddCategory setCategories={setCategories}/>
-      <button onClick={onAddCategory}>Agregar</button>
-      <ol>
-        {categories.map((category, index) => {
-          return <li key={index}>{category}</li>;
-        })}
-      </ol>
+      <AddCategory onAddCategory={(value) => onAddCategory(value)} />
+      {categories.map((category) => (
+        <GifGrid key={category} category={category} />
+      ))}
     </>
   );
 };

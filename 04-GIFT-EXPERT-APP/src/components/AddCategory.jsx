@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const AddCategory = ({ setCategories }) => {
+export const AddCategory = ({ onAddCategory }) => {
   const [inputValue, setInputValue] = useState({});
 
   const onInputChange = (e) => {
@@ -10,7 +10,8 @@ export const AddCategory = ({ setCategories }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     if (inputValue.input == undefined || inputValue.input === "") return;
-    setCategories((categories) => [...categories, inputValue.input]);
+    // setCategories((categories) => [...categories, inputValue.input]);
+    onAddCategory(inputValue.input.trim());
     setInputValue("");
   };
 
@@ -24,6 +25,7 @@ export const AddCategory = ({ setCategories }) => {
         id=""
         placeholder="Buscar gifs"
       />
+      <button onClick={onSubmit}>Agregar</button>
     </form>
   );
 };
