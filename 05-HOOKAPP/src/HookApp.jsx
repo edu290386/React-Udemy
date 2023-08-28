@@ -1,12 +1,15 @@
 
+import { MultipleCustomHooks } from "./03-examples/MultipleCustomHooks"
 
-import { SimpleForm } from './02-useEffect/SimpleForm'
+
 
 export const HookApp = () => {
-  return (
+
+
+
+    return (
     <div>
-        <SimpleForm
-        />
+        <MultipleCustomHooks />
     </div>
   )
 }
