@@ -9,7 +9,6 @@ export const FormWithCustomHook = () => {
   const { username, email, password } = formState;
   // const [formState, setFormState] = useState({});
   // const { username, password, email } = formState;
-  // const onResetForm = () => {};
 
   // const onInputChange = ({target}) => {
   //   const {name,value} = target;

@@ -3,7 +3,7 @@ import { Message } from "./Message";
 
 export const SimpleForm = () => {
   const [formState, setFormState] = useState({});
-const { username, email} = formState;
+  const { username, email } = formState;
   const onInputChange = (event) => {
     const { name, value } = event.target;
     setFormState({ ...formState, [name]: value });
@@ -31,7 +31,7 @@ const { username, email} = formState;
           value={email}
         />
       </form>
-      {username=="dustin" && <Message />}
+      {username == "dustin" && <Message />}
     </div>
   );
 };
