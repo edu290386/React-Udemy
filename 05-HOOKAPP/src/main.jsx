@@ -6,6 +6,6 @@ import './08-useReducer/intro-reducer'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <HookApp /> */}
+    <HookApp />
   </React.StrictMode>,
 )
