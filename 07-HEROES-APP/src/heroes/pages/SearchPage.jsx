@@ -1,17 +1,11 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { HeroCard } from "../components";
-import { useForm } from "../../hooks/useForm";
-import queryString from "query-string";
-import { getHeroesByName } from "../helpers";
+import { useForm, useSearch } from "../../hooks";
 
 export const SearchPage = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const { q = "" } = queryString.parse(location.search);
-  const heroes = getHeroesByName(q);
-  const showSearch = q.length === 0;
-  const showError = q.length > 0 && heroes.length === 0;
-  const { searchText, onInputChange } = useForm({ searchText: q });
+  const { searchText, onInputChange } = useForm({ searchText: "" });
+  const { q, heroes, showSearch, showError } = useSearch();
 
   const onSearchSubmit = (e) => {
     e.preventDefault();
